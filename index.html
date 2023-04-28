@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Dashboard</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="resources/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="resources/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="resources/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="resources/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="resources/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="resources/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="resources/plugins/summernote/summernote-bs4.min.css">
+    <style>
+        td {
+            padding: 5px 9px 5px 9px !important;
+            vertical-align: inherit !important;
+            border: 1px solid #b3b2b2;
+        }
+
+        th {
+            border: 1px solid #b3b2b2;
+            padding: 5px 9px 5px 9px !important;
+            background: #2367ff52 !important;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="resources/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        </div>
+
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+
+        </nav>
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="#" class="brand-link">
+                <img src="resources/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Salario 2023</span>
+            </a>
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="nav-icon far fa-circle text-danger"></i>
+                                <p class="text">Inicio</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index2.html" class="nav-link">
+                                <i class="nav-icon far fa-circle text-warning"></i>
+                                <p>Contáctenos</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="content-wrapper">
+            <br />
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row" id="contenedorDatos" style="display:block">
+                        <div class="col-md-6">
+                            <div class="card card-primary">
+                                <div class="card-header" style="background: #002f62">
+                                    <h3 class="card-title">Cálcular salario</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="">Porcentaje aumento (Modificable)</label>
+                                        <input class="form-control" id="aumento" value="13.67">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Grado</label>
+                                        <select class="form-control" id="selecGrado">
+                                            <option value="25.3733">PT</option>
+                                            <option value="31.8202">SI</option>
+                                            <option value="40.5007">IT</option>
+                                            <option value="42.6660">IJ</option>
+                                            <option value="44.8164">SC</option>
+                                            <option value="52.7816">CM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Orden público</label>
+                                        <select class="form-control" id="selecOrdPub">
+                                            <option value="0">No</option>
+                                            <option value="15">Si</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Tiempo en el grado</label>
+                                        <select class="form-control" id="selectExp">
+                                            <option value="1">1 año</option>
+                                            <option value="2">2 años</option>
+                                            <option value="3">3 años</option>
+                                            <option value="4">4 años</option>
+                                            <option value="5">5 años</option>
+                                            <option value="6">6 años</option>
+                                            <option value="7">7 años</option>
+                                            <option value="8">8 años</option>
+                                            <option value="9">9 años</option>
+                                            <option value="10">10 años</option>
+                                            <option value="11">11 años</option>
+                                            <option value="12">12 años</option>
+                                            <option value="13">13 años</option>
+                                            <option value="14">14 años</option>
+                                            <option value="15">15 años</option>
+                                            <option value="16">16 años</option>
+                                            <option value="17">17 años</option>
+                                            <option value="18">18 años</option>
+                                            <option value="19">19 años</option>
+                                            <option value="20">20 años</option>
+                                            <option value="21">21 años</option>
+                                            <option value="22">22 años</option>
+                                            <option value="23">23 años</option>
+                                            <option value="24">24 años</option>
+                                            <option value="25">25 años</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Bonificación asistencia familiar</label>
+                                        <select class="form-control" id="selecAsisFam">
+                                            <option value="0">No aplica</option>
+                                            <option value="30">Cónyuge</option>
+                                            <option value="33">Cónyuge y 1 hijo</option>
+                                            <option value="35">Cónyuge y 2 hijos</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Subsidio familiar</label>
+                                        <select class="form-control" id="selecSubFam">
+                                            <option value="0">No aplica</option>
+                                            <option value="1">1 beneficiario</option>
+                                            <option value="2">2 beneficiarios</option>
+                                            <option value="3">3 beneficiarios</option>
+                                            <option value="4">4 beneficiarios</option>
+                                            <option value="5">5 beneficiarios</option>
+                                            <option value="6">6 beneficiarios</option>
+                                            <option value="7">7 beneficiarios</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Aporte a vivienda militar</label>
+                                        <select class="form-control" id="selecCajaHonor">
+                                            <option value="7">7%</option>
+                                            <option value="10">10%</option>
+                                            <option value="0">No aplica</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="mostrarSelecDistincion" style="display:block">
+                                        <label for="">Distinción patrulleros</label>
+                                        <select class="form-control" id="distincion">
+                                            <option value="0">No aplica</option>
+                                            <option value="10">Primera</option>
+                                            <option value="20">Segunda</option>
+                                            <option value="25">Tercera</option>
+                                            <option value="30">Cuarta</option>
+                                            <option value="35">Quinta</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="mostrarSelecPrimaPer" style="display:none">
+                                        <label for="">Bonificación de permamencia</label>
+                                        <select class="form-control" id="selecPrimaPer">
+                                            <option value="0">No</option>
+                                            <option value="1">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-success" id="btnCalcular">Calcular</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="contenedorSalario" style="display:none">
+                        <div class="col-md-6">
+                            <div class="card card-primary">
+                                <div class="card-header" style="background: #002f62">
+                                    <h3 class="card-title">Posible salario</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table class="table table-striped" style="border: 1px solid #b3b2b2" id="tablaDevengos">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="text-align: center; background: #23ff4861">Devengado</th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="width: 60%; text-align: left">Concepto</th>
+                                                    <th style="width: 40%; text-align: center">Valor</th>
+                                                </tr>
+
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-striped" style="border: 1px solid #b3b2b2" id="tablaDescuentos">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="text-align:center">Descuentos</th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="width: 60%; text-align: left">Concepto</th>
+                                                    <th style="width: 40%; text-align: center">Valor</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-striped" style="border: 1px solid #b3b2b2" id="tablaTotal">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="text-align:center">Total</th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="width: 60%; text-align: left">Concepto</th>
+                                                    <th style="width: 40%; text-align: center">Valor</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-striped" style="border: 1px solid #b3b2b2" id="">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align:center">Aclaración conceptos</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: justify"><b>Valores aproximados: </b> La información aquí mostrada puede variar con los datos reales del salario </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: justify"><b>Prima Nivel Ejecutivo: </b> Equivalente al 20% del salario básico</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: justify"><b>Prima orden público (Nivel Ejecutivo): </b> Equivalente al 15% del salario básico</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: justify"><b>Sanidad: </b> Descuento mensual equivalente al 4% del salario básico</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: justify"><b>Caja de sueldos de retiro (CASUR): </b> Descuento mensual equivalente al 6% del salario básico</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: justify"><b>Ahorro obligatorio CAPROVIMPO: </b> Descuento mensual equivalente al 7% o 10% del salario básico</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: justify"><b>Auxilio mutuo pagaduría DIBIE: </b> Descuento mensual variable equivalente a $50 por cada afiliado de la Institución fallecido en el respectivo mes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: justify">
+                                                        <b>Afiliación o aumento Caja de sueldos de retiro CASUR: </b> Descuento por única vez equivalente al 30% del básico del primer salario
+                                                        (nuevos PT o ST) o de 10 días del aumento de salario para los demás uniformados aplicado en el retroactivo. Se calcula en base a la siguiente fórmula:
+                                                        retroactivo total (sin descuentos) dividido por cantidad de meses de retroactivo (4 para el mes de abril), multiplicado por 10 y dividido por 30, aproximadamente
+                                                        <br />
+                                                        <img src="formula.png" style="height:60px" />
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-success" id="btnRegresar">Regresar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+        </div>
+
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.2.0
+            </div>
+        </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+    </div>
+    <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="resources/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="resources/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="resources/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="resources/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="resources/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="resources/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="resources/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="resources/plugins/moment/moment.min.js"></script>
+    <script src="resources/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="resources/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="resources/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="resources/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="resources/dist/js/adminlte.js"></script>
+    <script src="CalculoValores.js"></script>
+    <script src="resources/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script>
+                            //function GuardarMensaje() {
+                            //    let DatosPorEnviar = {
+                            //        'id': 1,
+                            //        'messagetext': "asdasdasd",
+                            //    };
+
+                            //    $.ajax({
+                            //        type: "POST",
+                            //        url: "https://gfc8f6952f1e582-car.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/message/message",
+                            //        dataType: "application/json",
+                            //        data: JSON.stringify(DatosPorEnviar),
+                            //        CORS: false,
+                            //        contentType: 'application/json',
+                            //        secure: true,
+                            //        headers: {
+                            //            'Access-Control-Allow-Origin': '*',
+                            //        },
+                            //        success: function (response) {
+                            //            alert("El Mensaje Ha sido agregado con Exito");
+                            //            TraerDatosMensaje();
+                            //            pintarDatos("Error de petición");
+
+                            //        },
+                            //        error: function (response, xrh) {
+                            //            alert("Error en ejecución");
+
+                            //        }
+                            //    });
+                            //}
+                            //function GuardarMensaje1() {
+
+                            //    let url = 'https://ga0fbdf19beb753-reto11.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/mensaje/message';
+
+
+                            //    fetch(url).then(response => response.json()).then(data => mostrarData(data)).catch(error => console.log(error));
+
+                            //    const mostrarData = (data) => {
+                            //        console.log(data)
+                            //        let body = ""
+                            //        for (var i = 0; i < data.length; i++) {
+                            //            body += `<tr><td>${data[i].id}</td><td>${data[i].name}</td><td>${data[i].email}</td></tr>`
+                            //        }
+                            //        document.getElementById('data').innerHTML = body
+                            //        console.log(body)
+                            //    }
+                            //}
+
+                            //function GuardarMensaje2() {
+                            //    let DatosPorEnviar = {
+                            //        'id': 7,
+                            //        'messagetext': "asdasdasd",
+                            //    };
+
+                            //    fetch('https://ga0fbdf19beb753-reto11.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/mensaje/message', {
+                            //        method: 'GET',
+                            //        //mode: 'no-cors',
+                            //        //body: JSON.stringify(DatosPorEnviar)
+                            //    })
+                            //        .then(function (response) {
+                            //            if (response.ok) {
+                            //                return response.text()
+                            //            } else {
+                            //                throw "Error en la llamada Ajax";
+                            //            }
+
+                            //        })
+                            //        .then(function (texto) {
+                            //            console.log(texto);
+                            //        })
+                            //        .catch(function (err) {
+                            //            console.log(err);
+                            //        });
+                            //}
+    </script>
+
+</body>
+</html>
